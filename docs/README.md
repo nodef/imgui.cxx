@@ -20,7 +20,7 @@ Businesses: support continued development and maintenance via invoiced sponsorin
 
 ### The Pitch
 
-Dear ImGui is a **bloat-free graphical user interface library for C++**. It outputs optimized vertex buffers that you can render anytime in your 3D-pipeline-enabled application. It is fast, portable, renderer agnostic, and self-contained (no external dependencies).
+Dear ImGui is a **bloat-free graphical user interface library for C++**, by [Omar](https://github.com/ocornut). It outputs optimized vertex buffers that you can render anytime in your 3D-pipeline-enabled application. It is fast, portable, renderer agnostic, and self-contained (no external dependencies).
 
 Dear ImGui is designed to **enable fast iterations** and to **empower programmers** to create **content creation tools and visualization / debug tools** (as opposed to UI for the average end-user). It favors simplicity and productivity toward this goal and lacks certain features commonly found in more high-level libraries. Among other things, full internationalization (right-to-left text, bidirectional text, text shaping etc.) and accessibility features are not supported.
 
@@ -36,6 +36,37 @@ Dear ImGui is particularly suited to integration in game engines (for tooling), 
  - Portable, minimize dependencies, run on target (consoles, phones, etc.).
  - Efficient runtime and memory consumption.
  - Battle-tested, used by [many major actors in the game industry](https://github.com/ocornut/imgui/wiki/Software-using-dear-imgui).
+
+## Installation
+
+Run:
+```bash
+$ npm i imgui.cxx
+```
+
+And then include `imgui.h` as follows:
+```cxx
+#include "node_modules/imgui.cxx/imgui.h"
+#include "node_modules/imgui.cxx/imstb_rectpack.h" // If you need rectangle packing functions.
+#include "node_modules/imgui.cxx/imstb_textedit.h" // If you need advanced text editing functions.
+#include "node_modules/imgui.cxx/imstb_truetype.h" // If you need TrueType font loading functions.
+#include "node_modules/imgui.cxx/imconfig.h"       // If you want to override default compile-time configurations.
+#include "node_modules/imgui.cxx/imgui_internal.h" // If you need access to internal structures/functions.
+```
+
+You may also want to include `imgui.cpp` as follows:
+
+```cxx
+#ifndef __IMGUI_CXX__
+#define __IMGUI_CXX__
+#include "node_modules/imgui.cxx/imgui.cpp"
+#include "node_modules/imgui.cxx/imggui_draw.cpp"   // If you need to compile the rendering functions.
+#include "node_modules/imgui.cxx/imgui_tables.cpp"  // If you need to compile the table functions.
+#include "node_modules/imgui.cxx/imgui_widgets.cpp" // If you need to compile the widget functions.
+#endif
+```
+
+This will include both the function declaration and their definitions into a single file.
 
 ### Usage
 
@@ -224,3 +255,10 @@ License
 -------
 
 Dear ImGui is licensed under the MIT License, see [LICENSE.txt](https://github.com/ocornut/imgui/blob/master/LICENSE.txt) for more information.
+
+<br>
+<br>
+
+
+[![ORG](https://img.shields.io/badge/org-nodef-green?logo=Org)](https://nodef.github.io)
+![](https://ga-beacon.deno.dev/G-RC63DPBH3P:SH3Eq-NoQ9mwgYeHWxu7cw/github.com/nodef/imgui.cxx)

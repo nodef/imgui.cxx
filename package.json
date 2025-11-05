@@ -1,0 +1,15 @@
+{
+  "name": "imgui.cxx",
+  "version": "1.92.5",
+  "description": "Dear ImGui: Bloat-free Graphical User interface for C++ with minimal dependencies; Omar (2014).",
+  "keywords": ["c", "library", "gui", "graphics", "user interface", "imgui", "dear"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodef/imgui.cxx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nodef/imgui.cxx/issues"
+  },
+  "homepage": "https://github.com/nodef/imgui.cxx#readme"
+}
